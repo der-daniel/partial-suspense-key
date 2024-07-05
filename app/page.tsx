@@ -1,5 +1,5 @@
 import { Refresh } from "@/components/refresh";
-import { TimeStamp } from "@/components/timestamp";
+import { ServerComponent } from "@/components/server-component";
 
 export default function Home({
   searchParams: { key1, key2 },
@@ -16,10 +16,10 @@ export default function Home({
         <Refresh key1={key1} key2={key2} />
       </div>
       <div>
-        <TimeStamp nonce={key1} />
+        <ServerComponent nonce={key1} />
       </div>
       <div>
-        <TimeStamp nonce={key2} />
+        <ServerComponent nonce={key2} />
       </div>
     </div>
   );

@@ -1,17 +1,17 @@
 import { Suspense } from "react";
 import { get } from "./get";
 
-export const TimeStamp = ({ nonce }: { nonce: string }) => {
+export const ServerComponent = ({ nonce }: { nonce: string }) => {
   return (
     <div>
       <Suspense key={JSON.stringify(nonce)} fallback={<>loading...</>}>
-        <TimeStampAsync nonce={nonce} />
+        <ServerComponentAsync nonce={nonce} />
       </Suspense>
     </div>
   );
 };
 
-export const TimeStampAsync = async ({ nonce }: { nonce: string }) => {
+export const ServerComponentAsync = async ({ nonce }: { nonce: string }) => {
   const { key } = await get<{ key: string }>(
     `http://localhost:3000/api?key=${nonce}`
   );
